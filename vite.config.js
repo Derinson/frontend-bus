@@ -5,13 +5,14 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 3000,
-    proxy: {
-      '/api': {
-        target: 'https://crud-rutas-buses.onrender.com',
-        changeOrigin: true,
-        secure: false
-      }
-    }
+   proxy: {
+  '/api': {
+    target: 'https://crud-rutas-buses.onrender.com',
+    changeOrigin: true,
+    secure: false,
+    rewrite: path => path.replace(/^\/api/, '')
+  }
+}
   },
   build: {
     outDir: 'dist',
