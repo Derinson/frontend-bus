@@ -7,7 +7,7 @@ export default defineConfig({
     port: 3000,
     proxy: {
       '/api': {
-        target: 'https://crud-rutas-buses.onrender.com/api',
+        target: 'https://crud-rutas-buses.onrender.com',
         changeOrigin: true,
         secure: false
       }
